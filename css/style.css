@@ -1,0 +1,85 @@
+
+.empty-fret-marker,
+.guitar-chord-nut {
+    background: transparent!important;
+}
+
+.guitar-chord-note-active span {
+    margin: -5px;
+    padding: 0px 8px;
+    background: white;
+    font-size: 18px;
+}
+
+.guitar-chord {
+    vertical-align: top;
+    margin-bottom: 20px;
+    display: inline-block;
+    width: auto;
+    border-collapse: collapse;
+}
+
+.guitar-chord tr {
+    background: transparent!important;
+}
+
+.fretted-note {
+    background: transparent;
+}
+
+.guitar-chord-wrapper {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.guitar-chord thead {
+    text-align: center;
+}
+
+.guitar-chord td {
+    border: 1px solid lightgray;
+    height: 42px;
+    width: 25px;
+    padding: 5px!important;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.guitar-chord td span {
+    position: relative;
+    right: 18px;
+    top: 0px;
+}
+
+.guitar-chord tr {
+    background: transparent;
+}
+
+.guitar-chord tr:first-of-type {
+    font-weight: bold;
+}
+
+.guitar-chord tr td:last-of-type,
+.guitar-chord tr td:first-of-type {
+    border: 0;
+}
+
+.guitar-chord tr td:first-of-type {
+    border-left: 0;
+}
+
+.guitar-chord tr td:first-of-type span {
+    right: 10px;
+}
+
+.guitar-chord-nut {
+    border: 0!important;
+}
+
+.guitar-chord td {
+    font-weight: normal;
+}
+
+.guitar-chord-note-root span {
+    color:red;
+}
