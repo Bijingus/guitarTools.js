@@ -1,4 +1,6 @@
-function removeX(array) {
+var fretMarkers = [null, 'I', null, 'III', null, 'V', null, 'VII', null, null, 'X', null, 'XII', null, null, 'XV'];
+
+function GTremoveX(array) {
     var searchTerm = 'x';
     cleanArray = [];
     for (n = 0; n <= array.length - 1; n++) {
@@ -9,12 +11,15 @@ function removeX(array) {
     return cleanArray;
 }
 
+function GTascending(a, b) {
+    return a - b;
+}
+
 function buildChord(object, show) {
-    fretMarkers = [null, 'I', null, 'III', null, 'V', null, 'VII', null, null, 'X', null, 'XII', null, null, 'XV'];
     var data = '';
     data += '<table class="guitar-chord" data-name="' + object.name + '" data-type="' + object.type + '">';
-    var maxPos = Math.max.apply(Math, removeX(object.chord));
-    var minPos = Math.min.apply(Math, removeX(object.chord));
+    var maxPos = Math.max.apply(Math, GTremoveX(object.chord));
+    var minPos = Math.min.apply(Math, GTremoveX(object.chord));
     if (minPos != 0) {
         minPos = minPos - 1;
     }
@@ -56,7 +61,6 @@ function buildChord(object, show) {
 }
 
 function buildScale(object, show) {
-    fretMarkers = [null, 'I', null, 'III', null, 'V', null, 'VII', null, null, 'X', null, 'XII', null, null, 'XV'];
     var data = '';
     data += '<table class="guitar-chord" data-name="' + object.name + '" data-type="' + object.type + '">';
     var allScaleNotesArray = [];
@@ -65,11 +69,7 @@ function buildScale(object, show) {
             allScaleNotesArray.push(object.scale[i][n]);
         }
     }
-
-    function ascending(a, b) {
-        return a - b;
-    }
-    var sortScalesArray = allScaleNotesArray.sort(ascending);
+    var sortScalesArray = allScaleNotesArray.sort(GTascending);
     maxPos = sortScalesArray[sortScalesArray.length - 1];
     minPos = sortScalesArray[0];
     if (minPos != 0) {
